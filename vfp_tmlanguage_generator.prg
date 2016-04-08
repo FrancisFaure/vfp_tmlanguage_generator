@@ -2,8 +2,10 @@
 * Generate an extension for VS Code which provides support for the Visual FoxPro language
 * January 2016
 * VS Code URL : https://code.visualstudio.com/
+* April 2016 : snippets added
 clear
 set exact on
+set textmerge delimiters
 
 #define C_CRLF chr(13) + chr(10)
 #define C_TAB  chr(9)
@@ -12,10 +14,14 @@ set exact on
 #define C_TMLANGUAGE_FILENAME              "vfp.tmLanguage"
 #define C_PACKAGE_JSON_FILENAME            "package.json"
 #define C_CONFIGURATION_JSON_FILENAME      "vfp.configuration.json"
+#define C_SNIPPETS_JSON_FILENAME           "vfp.snippets.json"
 #define C_UNINSTALL_FILENAME               "uninstall vfp language.cmd"
+#define C_INSTALL_FILENAME                 "install vfp language.cmd"
 #define C_OUTPUT_DIR                       addbs(justpath(sys(16,0))) + "vfp_tmlanguage\"
-#define C_VERSION                          "0.1.0"
 #define C_MESSAGEBOX_TITLE                 "(VS Code) Visual FoxPro language"
+* 0.1.0 Initial Commit
+* 0.1.1 Snippets added
+#define C_VERSION                          "0.1.1"
 
 *** -------------- TextMate String ---------------------------
 #define C_TM_NAME_COMMENTS     "comment." + C_LANGUAGE
@@ -318,18 +324,23 @@ lsxml = xml_Header_Footer(m.lsxml)
 lsxml = utf8(m.lsxml)
 if CreateFile(C_TMLANGUAGE_FILENAME, m.lsxml) and ;
     CreateFile(C_PACKAGE_JSON_FILENAME, package_json()) and ;
-    CreateFile(C_CONFIGURATION_JSON_FILENAME, configuration_json())
+    CreateFile(C_CONFIGURATION_JSON_FILENAME, configuration_json()) and ;
+    CreateFile(C_SNIPPETS_JSON_FILENAME, snippets_json()) and ;
+    CreateFile(C_INSTALL_FILENAME, install_script()) and ;
+    CreateFile(C_UNINSTALL_FILENAME, uninstall_script())
   ? "DONE"
   if install()
-    =CreateFile(C_UNINSTALL_FILENAME, "rd /S/Q %USERPROFILE%\.vscode\extensions\vfp\")
-    =messagebox("OK : Restart your VS Code !", 0, C_MESSAGEBOX_TITLE)
+    if run_vscode_test()
+    else
+      =messagebox("OK : Restart your VS Code !", 0, C_MESSAGEBOX_TITLE)
+    endif
   endif
 endif
 
 return
 
 
-function split(lsString as String, llfull as Logical) as String
+function split(lsString as string, llfull as Logical) as string
   local lsreturn as string
   lsreturn=""
   do case
@@ -349,7 +360,7 @@ function split(lsString as String, llfull as Logical) as String
 endfunc
 
 
-function xml_Commands(lsString as String) as String
+function xml_Commands(lsString as string) as string
   if empty(m.lsString)
     return ""
   else
@@ -360,7 +371,7 @@ function xml_Commands(lsString as String) as String
   endif
 endfunc
 
-function xml_Functions(lsString as String) as String
+function xml_Functions(lsString as string) as string
   if empty(m.lsString)
     return ""
   else
@@ -368,7 +379,7 @@ function xml_Functions(lsString as String) as String
   endif
 endfunc
 
-function xml_Patterns(lsString as String) as String
+function xml_Patterns(lsString as string) as string
   lsString = ;
     C_TAB+"<key>patterns</key>" + C_CRLF+ ;
     C_TAB+"<array>" + C_CRLF+ ;
@@ -377,7 +388,7 @@ function xml_Patterns(lsString as String) as String
   return m.lsString
 endfunc
 
-function xml_Header_Footer(lsString as String) as String
+function xml_Header_Footer(lsString as string) as string
   * header
   lsString = ;
     [<?xml version="1.0" encoding="UTF-8"?>] + C_CRLF + ;
@@ -402,11 +413,11 @@ function xml_Header_Footer(lsString as String) as String
   return m.lsString
 endfunc
 
-function xml_comment(lsString as String) as String
+function xml_comment(lsString as string) as string
   return C_CRLF + replicate(C_TAB, 2) + "<!-- " + alltrim(m.lsString) + "-->" + C_CRLF
 endfunc
 
-function xml_Match_Name(lsMatch as String, lsName as String) as String
+function xml_Match_Name(lsMatch as string, lsName as string) as string
   local lsreturn
   lsreturn=""
   if !empty(m.lsMatch)
@@ -464,7 +475,7 @@ endfunc
 *** -------------- TMTHEME TESTS (debug)  ----------------------------------
 #if C_DEBUG_GENERATE_TMTHEME_TEST
 
-function xml_TMTHEME() as String
+function xml_TMTHEME() as string
   local lsreturn as string
   lsreturn = ""
   * http://manual.macromates.com/en/language_grammars
@@ -548,7 +559,7 @@ function xml_TMTHEME() as String
   return m.lsreturn
 endfunc
 
-function xml_tmThemeTest(lsString as string) as String
+function xml_tmThemeTest(lsString as string) as string
   if empty(m.lsString)
     return ""
   else
@@ -577,7 +588,7 @@ function CreateFile(lsFilename as string, lsString as string) as Logical
   return m.llReturn
 endfunc
 
-procedure DeleteFileIfExist(lsFilename as String)
+procedure DeleteFileIfExist(lsFilename as string)
   if file(m.lsFilename)
     erase (m.lsFilename)
   endif
@@ -595,7 +606,8 @@ function package_json() as string
   tmLanguage = C_TMLANGUAGE_FILENAME
   local lsVersion as string
   lsVersion = C_VERSION
-  set textmerge delimiters
+  local lsSnippets as string
+  lsSnippets = C_SNIPPETS_JSON_FILENAME
   text TO m.lsReturn NOSHOW TEXTMERGE
 {
 	"name": "<<m.lsLanguage>>",
@@ -620,7 +632,13 @@ function package_json() as string
 			"language": "<<m.lsLanguage>>",
 			"scopeName": "source.<<m.lsLanguage>>",
 			"path": "./syntaxes/<<m.tmLanguage>>"
-		}]
+		}],
+        "snippets": [
+            {
+                "language": "vfp",
+                "path": "./snippets/<<m.lsSnippets>>"
+            }
+        ]
 	}
 }
   ENDTEXT
@@ -645,24 +663,31 @@ function install() as Logical
   llReturn = .f.
   if file(C_OUTPUT_DIR + C_TMLANGUAGE_FILENAME) and ;
       file(C_OUTPUT_DIR + C_PACKAGE_JSON_FILENAME) and ;
-      file(C_OUTPUT_DIR + C_CONFIGURATION_JSON_FILENAME)
+      file(C_OUTPUT_DIR + C_CONFIGURATION_JSON_FILENAME) and ;
+      file(C_OUTPUT_DIR + C_SNIPPETS_JSON_FILENAME)
     local lsVSCodeExtensionDir as string
     lsVSCodeExtensionDir = getenv("USERPROFILE") + "\.vscode\extensions\"
     if directory(m.lsVSCodeExtensionDir)
       if messagebox("Install now ?", 4+32, C_MESSAGEBOX_TITLE) == 6 && YES
         try
-          if !directory(m.lsVSCodeExtensionDir)
-            md (m.lsVSCodeExtensionDir)
-          endif
+          *!*	          if !directory(m.lsVSCodeExtensionDir)
+          *!*	            md (m.lsVSCodeExtensionDir)
+          *!*	          endif
           if !directory(m.lsVSCodeExtensionDir + C_LANGUAGE)
             md (m.lsVSCodeExtensionDir + C_LANGUAGE)
           endif
           if !directory(m.lsVSCodeExtensionDir + C_LANGUAGE + "\syntaxes")
             md (m.lsVSCodeExtensionDir + C_LANGUAGE + "\syntaxes")
           endif
+          if !directory(m.lsVSCodeExtensionDir + C_LANGUAGE + "\snippets")
+            md (m.lsVSCodeExtensionDir + C_LANGUAGE + "\snippets")
+          endif
 
           =DeleteFileIfExist(m.lsVSCodeExtensionDir + C_LANGUAGE + "\syntaxes\" + C_TMLANGUAGE_FILENAME)
           copy file (C_OUTPUT_DIR + C_TMLANGUAGE_FILENAME) to (m.lsVSCodeExtensionDir + C_LANGUAGE + "\syntaxes")
+
+          =DeleteFileIfExist(m.lsVSCodeExtensionDir + C_LANGUAGE + "\snippets\" + C_SNIPPETS_JSON_FILENAME)
+          copy file (C_OUTPUT_DIR + C_SNIPPETS_JSON_FILENAME) to (m.lsVSCodeExtensionDir + C_LANGUAGE + "\snippets")
 
           =DeleteFileIfExist(m.lsVSCodeExtensionDir + C_LANGUAGE + "\" + C_PACKAGE_JSON_FILENAME)
           copy file (C_OUTPUT_DIR + C_PACKAGE_JSON_FILENAME) to (m.lsVSCodeExtensionDir + C_LANGUAGE)
@@ -683,4 +708,183 @@ function install() as Logical
     endif
   endif
   return m.llReturn
+endfunc
+
+
+
+
+function snippets_json() as string
+  local lsreturn as string
+  local lsLanguage as string
+  lsLanguage = C_LANGUAGE
+  text TO m.lsReturn NOSHOW TEXTMERGE
+{
+".source.<<m.lsLanguage>>": {
+  <<snippet_json_for()>>,
+  <<snippet_json_do_case()>>,
+  <<snippet_json_do_while()>>,
+  <<snippet_json_try()>>,
+  <<snippet_json_function()>>,
+  <<snippet_json_scan()>>,
+  <<snippet_json_if()>>
+  }
+}
+  ENDTEXT
+  return utf8(m.lsreturn)
+endfunc
+
+
+function snippet_json_for()
+\\  "foreach": {
+\        "prefix": "for",
+\        "body": [
+\          "for each ${Var} in ${Group} ${FOXOBJECT}",
+\          "\t$1* Commands",
+\          "\t$2* exit",
+\          "\t$3* loop",
+\          "next"
+\          ],
+\        "description": "FOR EACH ... NEXT"
+\     },
+\  "for": {
+\        "prefix": "for",
+\        "body": [
+\          "for ${VarName} = 1 to ${nFinalValue} step ${nIncrement}",
+\          "\t$1* Commands",
+\          "\t$2* exit",
+\          "\t$3* loop",
+\          "next"
+\          ],
+\        "description": "FOR ... NEXT"
+\     }
+  return ""
+endfunc
+
+function snippet_json_do_case()
+\\  "do case": {
+\        "prefix": "do",
+\        "body": [
+\          "do case",
+\          "\tcase ${lExpression1}",
+\          "\t\t$1* Commands",
+\          "\tcase ${lExpression2}",
+\          "\t\t$2* Commands",
+\          "\tcase ${lExpressionN}",
+\          "\t\t$3* Commands",
+\          "otherwise",
+\          "\t\t$4* Commands",
+\          "endcase"
+\          ],
+\        "description": "DO CASE ... ENDCASE"
+\     }
+  return ""
+endfunc
+
+function snippet_json_do_while()
+\\  "do while": {
+\        "prefix": "do",
+\        "body": [
+\          "do while ${lExpression}",
+\          "\t$1* Commands ",
+\          "\t$2* exit",
+\          "\t$3* loop",
+\          "enddo"
+\          ],
+\        "description": "DO WHILE ... ENDDO"
+\     }
+  return ""
+endfunc
+
+function snippet_json_function()
+\\  "function": {
+\        "prefix": "function",
+\        "body": [
+\          "function ${FunctionName}(${parameter1} as ${type1}, ${parameter2} as ${type2}) as ${returntype}",
+\          "\t$1local return as ${returntype}",
+\          "\t$2* Commands ",
+\          "\t$3return m.return",
+\          "endfunc"
+\          ],
+\        "description": "FUNCTION ... ENDFUNC"
+\     }
+  return ""
+endfunc
+
+function snippet_json_scan()
+\\  "scan": {
+\        "prefix": "scan",
+\        "body": [
+\          "scan for ${lExpression}",
+\          "\t$1* Commands ",
+\          "\t$2* exit",
+\          "\t$3* loop",
+\          "endscan"
+\          ],
+\        "description": "SCAN ... ENDSCAN"
+\     }
+  return ""
+endfunc
+
+function snippet_json_try()
+\\  "try": {
+\        "prefix": "try",
+\        "body": [
+\          "try",
+\          "\t$1* tryCommands",
+\          "catch to ${oException}",
+\          "\t$2* catchCommands",
+\          "throw ${eUserExpression}",
+\          "finally",
+\          "\t$3* finallyCommands",
+\          "endtry"
+\          ],
+\        "description": "TRY...CATCH...FINALLY"
+\     }
+  return ""
+endfunc
+
+function snippet_json_if()
+\\  "if": {
+\        "prefix": "if",
+\        "body": [
+\          "if ${lExpression}",
+\          "\t$1* Commands",
+\          "else",
+\          "\t$2* Commands",
+\          "endif"
+\          ],
+\        "description": "IF ... ENDIF"
+\     }
+  return ""
+endfunc
+
+function install_script() as string
+  local lsreturn as string
+  lsreturn = ""
+  lsreturn = m.lsreturn + "md %USERPROFILE%\.vscode\extensions\"+ C_LANGUAGE + "\" + C_CRLF
+  lsreturn = m.lsreturn + "md %USERPROFILE%\.vscode\extensions\"+ C_LANGUAGE + "\syntaxes\" + C_CRLF
+  lsreturn = m.lsreturn + "md %USERPROFILE%\.vscode\extensions\"+ C_LANGUAGE + "\snippets\" + C_CRLF
+  lsreturn = m.lsreturn + "copy " + C_OUTPUT_DIR + C_TMLANGUAGE_FILENAME +" %USERPROFILE%\.vscode\extensions\"+ C_LANGUAGE + "\syntaxes\" + C_CRLF
+  lsreturn = m.lsreturn + "copy " + C_OUTPUT_DIR + C_SNIPPETS_JSON_FILENAME +" %USERPROFILE%\.vscode\extensions\"+ C_LANGUAGE + "\snippets\" + C_CRLF
+  lsreturn = m.lsreturn + "copy " + C_OUTPUT_DIR + C_PACKAGE_JSON_FILENAME +" %USERPROFILE%\.vscode\extensions\"+ C_LANGUAGE + "\" + C_CRLF
+  lsreturn = m.lsreturn + "copy " + C_OUTPUT_DIR + C_CONFIGURATION_JSON_FILENAME +" %USERPROFILE%\.vscode\extensions\"+ C_LANGUAGE + "\" + C_CRLF
+  return m.lsreturn
+endfunc
+
+function uninstall_script() as string
+  return "rd /S/Q %USERPROFILE%\.vscode\extensions\vfp\" + C_CRLF
+endfunc
+
+function run_vscode_test() as Logical
+  local lsTest as string
+  lsTest = getenv("temp") + "\test.prg"
+  if messagebox("Run VS Code on " + lsTest +" for test ?", 4+32, C_MESSAGEBOX_TITLE)==6
+    =DeleteFileIfExist(m.lsTest)
+    =strtofile("* Test.prg " + dtoc(date())+" "+time() + C_CRLF, m.lsTest)
+    local lsRun as string
+    lsRun = "RUN /N " + getenv("PROGRAMFILES") + "\Microsoft VS Code\Code.exe " + m.lsTest
+    &lsRun
+    return .t.
+  endif
+  return .f.
 endfunc

@@ -46,6 +46,9 @@ rd /S/Q %USERPROFILE%\.vscode\extensions\vfp\
 ```
 (Another way using Windows Explorer is to delete **%USERPROFILE%\.vscode\extensions\vfp\**)
 
+## Update April 7, 2016 Snippets added
+
+[SNIPPETS](Snippets.md)
 
 ## License
 

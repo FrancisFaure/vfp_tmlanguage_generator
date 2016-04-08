@@ -1,0 +1,100 @@
+{
+".source.vfp": {
+    "foreach": {
+        "prefix": "for",
+        "body": [
+          "for each ${Var} in ${Group} ${FOXOBJECT}",
+          "\t$1* Commands",
+          "\t$2* exit",
+          "\t$3* loop",
+          "next"
+          ],
+        "description": "FOR EACH ... NEXT"
+     },
+  "for": {
+        "prefix": "for",
+        "body": [
+          "for ${VarName} = 1 to ${nFinalValue} step ${nIncrement}",
+          "\t$1* Commands",
+          "\t$2* exit",
+          "\t$3* loop",
+          "next"
+          ],
+        "description": "FOR ... NEXT"
+     },
+    "do case": {
+        "prefix": "do",
+        "body": [
+          "do case",
+          "\tcase ${lExpression1}",
+          "\t\t$1* Commands",
+          "\tcase ${lExpression2}",
+          "\t\t$2* Commands",
+          "\tcase ${lExpressionN}",
+          "\t\t$3* Commands",
+          "otherwise",
+          "\t\t$4* Commands",
+          "endcase"
+          ],
+        "description": "DO CASE ... ENDCASE"
+     },
+    "do while": {
+        "prefix": "do",
+        "body": [
+          "do while ${lExpression}",
+          "\t$1* Commands ",
+          "\t$2* exit",
+          "\t$3* loop",
+          "enddo"
+          ],
+        "description": "DO WHILE ... ENDDO"
+     },
+    "try": {
+        "prefix": "try",
+        "body": [
+          "try",
+          "\t$1* tryCommands",
+          "catch to ${oException}",
+          "\t$2* catchCommands",
+          "throw ${eUserExpression}",
+          "finally",
+          "\t$3* finallyCommands",
+          "endtry"
+          ],
+        "description": "TRY...CATCH...FINALLY"
+     },
+    "function": {
+        "prefix": "function",
+        "body": [
+          "function ${FunctionName}(${parameter1} as ${type1}, ${parameter2} as ${type2}) as ${returntype}",
+          "\t$1local return as ${returntype}",
+          "\t$2* Commands ",
+          "\t$3return m.return",
+          "endfunc"
+          ],
+        "description": "FUNCTION ... ENDFUNC"
+     },
+    "scan": {
+        "prefix": "scan",
+        "body": [
+          "scan for ${lExpression}",
+          "\t$1* Commands ",
+          "\t$2* exit",
+          "\t$3* loop",
+          "endscan"
+          ],
+        "description": "SCAN ... ENDSCAN"
+     },
+    "if": {
+        "prefix": "if",
+        "body": [
+          "if ${lExpression}",
+          "\t$1* Commands",
+          "else",
+          "\t$2* Commands",
+          "endif"
+          ],
+        "description": "IF ... ENDIF"
+     }
+  }
+}

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>prg</string>
+	</array>
+	<key>name</key>
+	<string>Visual FoxPro</string>
+	<key>patterns</key>
+	<array>
+
+		<!-- COMMENTS-->
+		<dict>
+			<key>match</key>
+			<string>(^[ |\t]*(?i:note)\s.*|^[ |\t]*\*.*|&amp;&amp;.*)</string>
+			<key>name</key>
+			<string>comment.vfp</string>
+		</dict>
+
+		<!-- CONSTANTS-->
+		<dict>
+			<key>match</key>
+			<string>(?i:(\.t\.|\.y\.|\.f\.|\.n\.|\.null\.|\bnull\b))</string>
+			<key>name</key>
+			<string>constant.language.vfp</string>
+		</dict>
+
+		<!-- PREPROCESSOR DIRECTIVES-->
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*#[ |\t]*(?i:(defi(?:n|ne)?|unde(?:f|fi|fin|fine)?|ifde[f]?|ifnd(?:e|ef)?|incl(?:u|ud|ude)?|if|elif|else|endi[f]?|name|inse(?:r|rt)?)\b)</string>
+			<key>name</key>
+			<string>meta.preprocessor.vfp</string>
+		</dict>
+
+		<!-- COMMANDS-->
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(cd|do|go|if|md|on|rd)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(add|dir|end|for|pop|run|set|sum|try|use|zap)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(call|case|copy|dock|drop|edit|else|exit|find|free|goto|help|hide|join|list|load|loop|menu|move|next|open|pack|play|push|quit|read|save|scan|seek|show|size|skip|sort|text|type|wait|with|zoom)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(alte[r]?|begi[n]?|blan[k]?|buil[d]?|catc[h]?|chdi[r]?|clea[r]?|clos[e]?|coun[t]?|debu[g]?|ejec[t]?|endd[o]?|endi[f]?|eras[e]?|erro[r]?|flus[h]?|inde[x]?|inpu[t]?|labe[l]?|loca[l]?|mkdi[r]?|mous[e]?|rese[t]?|retr[y]?|rmdi[r]?|stor[e]?|thro[w]?|tota[l]?)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(acce(?:p|pt)?|appe(?:n|nd)?|asse(?:r|rt)?|assi(?:s|st)?|brow(?:s|se)?|canc(?:e|el)?|chan(?:g|ge)?|crea(?:t|te)?|defi(?:n|ne)?|dele(?:t|te)?|endf(?:o|or)?|endt(?:r|ry)?|expo(?:r|rt)?|gath(?:e|er)?|hidd(?:e|en)?|ifnd(?:e|ef)?|impo(?:r|rt)?|inse(?:r|rt)?|loca(?:t|te)?|logo(?:u|ut)?|modi(?:f|fy)?|publ(?:i|ic)?|reca(?:l|ll)?|remo(?:v|ve)?|rena(?:m|me)?|repo(?:r|rt)?|resu(?:m|me)?|retu(?:r|rn)?|scro(?:l|ll)?|sele(?:c|ct)?|unlo(?:c|ck)?|upda(?:t|te)?)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(aver(?:a|ag|age)?|comp(?:i|il|ile)?|decl(?:a|ar|are)?|disp(?:l|la|lay)?|endc(?:a|as|ase)?|endf(?:u|un|unc)?|endp(?:r|ro|roc)?|ends(?:c|ca|can)?|endt(?:e|ex|ext)?|endw(?:i|it|ith)?|fina(?:l|ll|lly)?|gete(?:x|xp|xpr)?|priv(?:a|at|ate)?|rein(?:d|de|dex)?|rele(?:a|as|ase)?|repl(?:a|ac|ace)?|rest(?:o|or|ore)?|scat(?:t|te|ter)?|susp(?:e|en|end)?)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(acti(?:v|va|vat|vate)?|cont(?:i|in|inu|inue)?|debu(?:g|go|gou|gout)?|doev(?:e|en|ent|ents)?|exte(?:r|rn|rna|rnal)?|func(?:t|ti|tio|tion)?|keyb(?:o|oa|oar|oard)?|prin(?:t|tj|tjo|tjob)?|regi(?:o|on|ona|onal)?|roll(?:b|ba|bac|back)?|vali(?:d|da|dat|date)?)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(calc(?:u|ul|ula|ulat|ulate)?|dime(?:n|ns|nsi|nsio|nsion)?|dire(?:c|ct|cto|ctor|ctory)?|endd(?:e|ef|efi|efin|efine)?|node(?:f|fa|fau|faul|fault)?|othe(?:r|rw|rwi|rwis|rwise)?|proc(?:e|ed|edu|edur|edure)?|prot(?:e|ec|ect|ecte|ected)?|runs(?:c|cr|cri|crip|cript)?)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(deac(?:t|ti|tiv|tiva|tivat|tivate)?|impl(?:e|em|eme|emen|ement|ements)?|para(?:m|me|met|mete|meter|meters)?)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(?i:(endp(?:r|ri|rin|rint|rintj|rintjo|rintjob)?|lpar(?:a|am|ame|amet|amete|ameter|ameters)?)\b)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ |\t]*(!|=|\?\?\?|\?\?|\?|@|\\\\|\\)</string>
+			<key>name</key>
+			<string>support.other.vfp</string>
+		</dict>
+
+		<!-- FUNCTIONS-->
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(at|fv|id|on|os|pi|pv)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(abs|asc|atc|bar|bof|cdx|chr|col|cos|day|dbc|dbf|dmy|dow|eof|evl|exp|for|iif|int|key|len|log|max|mdx|mdy|min|mod|ndx|nvl|pad|rat|rgb|row|sec|set|sin|str|sys|tag|tan|val)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(acos|adel|adir|ains|alen|asin|atan|atcc|atn2|at_c|cast|cdow|ctod|ctot|date|dtoc|dtor|dtos|dtot|feof|home|hour|left|lenc|like|lock|mcol|menu|mrow|mton|ntom|pack|padc|padl|padr|pcol|prow|rand|ratc|rtod|seek|sign|sqrt|time|trim|ttoc|ttod|used|week|year)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(acop[y]?|addb[s]?|adll[s]?|afon[t]?|alia[s]?|asca[n]?|asor[t]?|ause[d]?|bito[r]?|cpdb[f]?|empt[y]?|erro[r]?|fdat[e]?|fget[s]?|file[s]?|fixe[d]?|fkma[x]?|floa[t]?|floc[k]?|floo[r]?|fope[n]?|foun[d]?|fput[s]?|frea[d]?|fsee[k]?|fsiz[e]?|ftim[e]?|getc[p]?|icas[e]?|indb[c]?|inke[y]?|ispe[n]?|left[c]?|like[c]?|log1[0]?|lowe[r]?|ltri[m]?|mdow[n]?|mlin[e]?|mont[h]?|orde[r]?|recn[o]?|righ[t]?|rloc[k]?|roun[d]?|rtri[m]?|scol[s]?|spac[e]?|srow[s]?|stuf[f]?|tagn[o]?|uppe[r]?|wcol[s]?|wfon[t]?|wlas[t]?|wlco[l]?|wlro[w]?|wrea[d]?|wrow[s]?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(acla(?:s|ss)?|aerr(?:o|or)?|alin(?:e|es)?|atli(?:n|ne)?|bint(?:o|oc)?|bita(?:n|nd)?|bitn(?:o|ot)?|bits(?:e|et)?|bitx(?:o|or)?|chan(?:g|ge)?|chrs(?:a|aw)?|cmon(?:t|th)?|cntb(?:a|ar)?|cntp(?:a|ad)?|ctob(?:i|in)?|curd(?:i|ir)?|curv(?:a|al)?|dbus(?:e|ed)?|fclo(?:s|se)?|fcou(?:n|nt)?|ferr(?:o|or)?|fflu(?:s|sh)?|fiel(?:d|ds)?|filt(?:e|er)?|fwri(?:t|te)?|getb(?:a|ar)?|getd(?:i|ir)?|gete(?:n|nv)?|getp(?:a|ad)?|getp(?:e|em)?|head(?:e|er)?|inli(?:s|st)?|isnu(?:l|ll)?|line(?:n|no)?|look(?:u|up)?|memo(?:r|ry)?|minu(?:t|te)?|mrkb(?:a|ar)?|mrkp(?:a|ad)?|objn(?:u|um)?|objv(?:a|ar)?|occu(?:r|rs)?|oldv(?:a|al)?|pcou(?:n|nt)?|popu(?:p|ps)?|prmb(?:a|ar)?|prmp(?:a|ad)?|prom(?:p|pt)?|prop(?:e|er)?|righ(?:t|tc)?|sche(?:m|me)?|sele(?:c|ct)?|skpb(?:a|ar)?|skpp(?:a|ad)?|stuf(?:f|fc)?|subs(?:t|tr)?|targ(?:e|et)?|uniq(?:u|ue)?|unpa(?:c|ck)?|wchi(?:l|ld)?|wexi(?:s|st)?|wind(?:o|ow)?|wont(?:o|op)?|wtit(?:l|le)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(aeve(?:n|nt|nts)?|afie(?:l|ld|lds)?|allt(?:r|ri|rim)?|asel(?:o|ob|obj)?|atcl(?:i|in|ine)?|betw(?:e|ee|een)?|bitt(?:e|es|est)?|ceil(?:i|in|ing)?|chrt(?:r|ra|ran)?|comp(?:o|ob|obj)?|comprop|dbal(?:i|ia|ias)?|ddepoke|dele(?:t|te|ted)?|fchs(?:i|iz|ize)?|fcre(?:a|at|ate)?|fkla(?:b|be|bel)?|fldl(?:i|is|ist)?|getf(?:i|il|ile)?|getf(?:o|on|ont)?|geth(?:o|os|ost)?|getp(?:i|ic|ict)?|gomo(?:n|nt|nth)?|insm(?:o|od|ode)?|isal(?:p|ph|pha)?|isbl(?:a|an|ank)?|isco(?:l|lo|lor)?|isdi(?:g|gi|git)?|islo(?:w|we|wer)?|ismo(?:u|us|use)?|isup(?:p|pe|per)?|justext|last(?:k|ke|key)?|locf(?:i|il|ile)?|lupd(?:a|at|ate)?|mwin(?:d|do|dow)?|netw(?:o|or|ork)?|numl(?:o|oc|ock)?|paym(?:e|en|ent)?|prim(?:a|ar|ary)?|prog(?:r|ra|ram)?|prti(?:n|nf|nfo)?|putf(?:i|il|ile)?|quar(?:t|te|ter)?|ratl(?:i|in|ine)?|rdle(?:v|ve|vel)?|read(?:k|ke|key)?|recs(?:i|iz|ize)?|refr(?:e|es|esh)?|requ(?:e|er|ery)?|seco(?:n|nd|nds)?|soun(?:d|de|dex)?|sqle(?:x|xe|xec)?|strc(?:o|on|onv)?|strt(?:r|ra|ran)?|subs(?:t|tr|trc)?|upda(?:t|te|ted)?|varr(?:e|ea|ead)?|vart(?:y|yp|ype)?|vers(?:i|io|ion)?|wbor(?:d|de|der)?|wout(?:p|pu|put)?|wpar(?:e|en|ent)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(aele(?:m|me|men|ment)?|amem(?:b|be|ber|bers)?|atag(?:i|in|inf|info)?|barc(?:o|ou|oun|ount)?|bitc(?:l|le|lea|lear)?|caps(?:l|lo|loc|lock)?|chrt(?:r|ra|ran|ranc)?|coma(?:r|rr|rra|rray)?|date(?:t|ti|tim|time)?|eval(?:u|ua|uat|uate)?|fldc(?:o|ou|oun|ount)?|forceext|full(?:p|pa|pat|path)?|getc(?:o|ol|olo|olor)?|inpu(?:t|tb|tbo|tbox)?|isho(?:s|st|ste|sted)?|justpath|juststem|keym(?:a|at|atc|atch)?|meml(?:i|in|ine|ines)?|mess(?:a|ag|age|ages)?|recc(?:o|ou|oun|ount)?|rela(?:t|ti|tio|tion)?|roll(?:b|ba|bac|back)?|tagc(?:o|ou|oun|ount)?|txnl(?:e|ev|eve|evel)?|txtw(?:i|id|idt|idth)?|wmax(?:i|im|imu|imum)?|wmin(?:i|im|imu|imum)?|wvis(?:i|ib|ibl|ible)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(aget(?:c|cl|cla|clas|class)?|ains(?:t|ta|tan|tanc|tance)?|alan(?:g|gu|gua|guag|guage)?|amou(?:s|se|seo|seob|seobj)?|ansi(?:t|to|too|tooe|tooem)?|apri(?:n|nt|nte|nter|nters)?|apro(?:c|ci|cin|cinf|cinfo)?|ases(?:s|si|sio|sion|sions)?|barp(?:r|ro|rom|romp|rompt)?|bind(?:e|ev|eve|even|event)?|bitl(?:s|sh|shi|shif|shift)?|bitr(?:s|sh|shi|shif|shift)?|cand(?:i|id|ida|idat|idate)?|comp(?:l|le|let|lete|leted)?|cpco(?:n|nv|nve|nver|nvert)?|cpcu(?:r|rr|rre|rren|rrent)?|cpno(?:t|tr|tra|tran|trans)?|dbge(?:t|tp|tpr|tpro|tprop)?|dbse(?:t|tp|tpr|tpro|tprop)?|ddeadvise|dire(?:c|ct|cto|ctor|ctory)?|disk(?:s|sp|spa|spac|space)?|dode(?:f|fa|fau|faul|fault)?|driv(?:e|et|ety|etyp|etype)?|file(?:t|to|tos|tost|tostr)?|forcepath|geto(?:b|bj|bje|bjec|bject)?|imes(?:t|ta|tat|tatu|tatus)?|inde(?:x|xs|xse|xsee|xseek)?|isfl(?:o|oc|ock|ocke|ocked)?|isrl(?:o|oc|ock|ocke|ocked)?|justdrive|justfname|newo(?:b|bj|bje|bjec|bject)?|norm(?:a|al|ali|aliz|alize)?|oemt(?:o|oa|oan|oans|oansi)?|padp(?:r|ro|rom|romp|rompt)?|pems(?:t|ta|tat|tatu|tatus)?|repl(?:i|ic|ica|icat|icate)?|rgbs(?:c|ch|che|chem|cheme)?|sqlc(?:a|an|anc|ance|ancel)?|sqlc(?:o|om|omm|ommi|ommit)?|sqlt(?:a|ab|abl|able|ables)?|strt(?:o|of|ofi|ofil|ofile)?|sysm(?:e|et|etr|etri|etric)?|text(?:m|me|mer|merg|merge)?|tran(?:s|sf|sfo|sfor|sform)?|type(?:a|ah|ahe|ahea|ahead)?|wdoc(?:k|ka|kab|kabl|kable)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(adat(?:a|ab|aba|abas|abase|abases)?|adbo(?:b|bj|bje|bjec|bject|bjects)?|adoc(?:k|ks|kst|ksta|kstat|kstate)?|asta(?:c|ck|cki|ckin|ckinf|ckinfo)?|asub(?:s|sc|scr|scri|scrip|script)?|ddeenabled|ddeexecute|dderequest|defa(?:u|ul|ult|ulte|ultex|ultext)?|desc(?:e|en|end|endi|endin|ending)?|diff(?:e|er|ere|eren|erenc|erence)?|edit(?:s|so|sou|sour|sourc|source)?|exec(?:s|sc|scr|scri|scrip|script)?|font(?:m|me|met|metr|metri|metric)?|getp(?:r|ri|rin|rint|rinte|rinter)?|getwordnum|idxc(?:o|ol|oll|olla|ollat|ollate)?|isle(?:a|ad|adb|adby|adbyt|adbyte)?|isre(?:a|ad|ado|adon|adonl|adonly)?|mess(?:a|ag|age|ageb|agebo|agebox)?|para(?:m|me|met|mete|meter|meters)?|rais(?:e|ee|eev|eeve|eeven|eevent)?|sqlc(?:o|ol|olu|olum|olumn|olumns)?|sqlc(?:o|on|onn|onne|onnec|onnect)?|sqlg(?:e|et|etp|etpr|etpro|etprop)?|sqlp(?:r|re|rep|repa|repar|repare)?|sqls(?:e|et|etp|etpr|etpro|etprop)?|stre(?:x|xt|xtr|xtra|xtrac|xtract)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(addp(?:r|ro|rop|rope|roper|ropert|roperty)?|asql(?:h|ha|han|hand|handl|handle|handles)?|avcx(?:c|cl|cla|clas|class|classe|classes)?|cursortoxml|ddeinitiate|ddesettopic|displaypath|drop(?:o|of|off|offl|offli|offlin|offline)?|getf(?:l|ld|lds|ldst|ldsta|ldstat|ldstate)?|isex(?:c|cl|clu|clus|clusi|clusiv|clusive)?|load(?:p|pi|pic|pict|pictu|pictur|picture)?|objt(?:o|oc|ocl|ocli|oclie|oclien|oclient)?|prin(?:t|ts|tst|tsta|tstat|tstatu|tstatus)?|save(?:p|pi|pic|pict|pictu|pictur|picture)?|setf(?:l|ld|lds|ldst|ldsta|ldstat|ldstate)?|sqlr(?:o|ol|oll|ollb|ollba|ollbac|ollback)?|tabl(?:e|er|ere|erev|ereve|erever|erevert)?|tabl(?:e|eu|eup|eupd|eupda|eupdat|eupdate)?|xmltocursor)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(comc(?:l|la|las|lass|lassi|lassin|lassinf|lassinfo)?|crea(?:t|te|teb|tebi|tebin|tebina|tebinar|tebinary)?|crea(?:t|te|teo|teob|teobj|teobje|teobjec|teobject)?|ddelasterror|ddesetoption|ddeterminate|even(?:t|th|tha|than|thand|thandl|thandle|thandler)?|getinterface|getr(?:e|es|esu|esul|esult|esults|esultse|esultset)?|getwordcount|setr(?:e|es|esu|esul|esult|esults|esultse|esultset)?|unbi(?:n|nd|nde|ndev|ndeve|ndeven|ndevent|ndevents)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(anet(?:r|re|res|reso|resou|resour|resourc|resource|resources)?|crea(?:t|te|teo|teof|teoff|teoffl|teoffli|teofflin|teoffline)?|curs(?:o|or|org|orge|orget|orgetp|orgetpr|orgetpro|orgetprop)?|curs(?:o|or|ors|orse|orset|orsetp|orsetpr|orsetpro|orsetprop)?|ddeaborttrans|ddesetservice|isme(?:m|mo|mof|mofe|mofet|mofetc|mofetch|mofetche|mofetched)?|sqld(?:i|is|isc|isco|iscon|isconn|isconne|isconnec|isconnect)?|xmlupdategram)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(clea(?:r|rr|rre|rres|rresu|rresul|rresult|rresults|rresultse|rresultset)?|comr(?:e|et|etu|etur|eturn|eturne|eturner|eturnerr|eturnerro|eturnerror)?|createobjectex|istr(?:a|an|ans|ansa|ansac|ansact|ansacta|ansactab|ansactabl|ansactable)?|remo(?:v|ve|vep|vepr|vepro|veprop|veprope|veproper|vepropert|veproperty)?|sqlm(?:o|or|ore|orer|orere|oreres|oreresu|oreresul|oreresult|oreresults)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(aget(?:f|fi|fil|file|filev|fileve|filever|filevers|fileversi|fileversio|fileversion)?|geta(?:u|ut|uto|utoi|utoin|utoinc|utoincv|utoincva|utoincval|utoincvalu|utoincvalue)?|getn(?:e|ex|ext|extm|extmo|extmod|extmodi|extmodif|extmodifi|extmodifie|extmodified)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(getc(?:u|ur|urs|urso|ursor|ursora|ursorad|ursorada|ursoradap|ursoradapt|ursoradapte|ursoradapter)?|make(?:t|tr|tra|tran|trans|transa|transac|transact|transacta|transactab|transactabl|transactable)?|sqls(?:t|tr|tri|trin|tring|tringc|tringco|tringcon|tringconn|tringconne|tringconnec|tringconnect)?)( |\t)*(\(|\[))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:\b(sqli(?:d|dl|dle|dled|dledi|dledis|dledisc|dledisco|dlediscon|dledisconn|dledisconne|dledisconnec|dledisconnect)?)( |\t)*(\(|\[))</string>
+		</dict>
+
+		<!-- BASE CLASSES-->
+		<dict>
+			<key>match</key>
+			<string>"(?i:(activedoc|checkbox|collection|column|combobox|commandbutton|commandgroup|container|control|cursor|cursoradapter|custom|dataenvironment|editbox|empty|exception|form|formset|grid|header|hyperlink|image|label|line|listbox|oleboundcontrol|olecontrol|optionbutton|optiongroup|page|pageframe|projecthook|relation|reportlistener|separator|session|shape|spinner|textbox|timer|toolbar|xmladapter|xmlfield|xmltable))"</string>
+			<key>name</key>
+			<string>support.class.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>'(?i:(activedoc|checkbox|collection|column|combobox|commandbutton|commandgroup|container|control|cursor|cursoradapter|custom|dataenvironment|editbox|empty|exception|form|formset|grid|header|hyperlink|image|label|line|listbox|oleboundcontrol|olecontrol|optionbutton|optiongroup|page|pageframe|projecthook|relation|reportlistener|separator|session|shape|spinner|textbox|timer|toolbar|xmladapter|xmlfield|xmltable))'</string>
+			<key>name</key>
+			<string>support.class.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\[(?i:(activedoc|checkbox|collection|column|combobox|commandbutton|commandgroup|container|control|cursor|cursoradapter|custom|dataenvironment|editbox|empty|exception|form|formset|grid|header|hyperlink|image|label|line|listbox|oleboundcontrol|olecontrol|optionbutton|optiongroup|page|pageframe|projecthook|relation|reportlistener|separator|session|shape|spinner|textbox|timer|toolbar|xmladapter|xmlfield|xmltable))\]</string>
+			<key>name</key>
+			<string>support.class.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b (?i:(activedoc|checkbox|collection|column|combobox|commandbutton|commandgroup|container|control|cursor|cursoradapter|custom|dataenvironment|editbox|empty|exception|form|formset|grid|header|hyperlink|image|label|line|listbox|oleboundcontrol|olecontrol|optionbutton|optiongroup|page|pageframe|projecthook|relation|reportlistener|separator|session|shape|spinner|textbox|timer|toolbar|xmladapter|xmlfield|xmltable))\b</string>
+			<key>name</key>
+			<string>support.class.vfp</string>
+		</dict>
+
+		<!-- PEM - Properties Events Methods-->
+		<dict>
+			<key>match</key>
+			<string>(?i:\b(activate|activatecell|activecolumn|activecontrol|activeform|activepage|activerow|add|addcolumn|additem|addlinefeeds|addlistitem|addobject|addproperty|addtableschema|adjustobjectsize|adocodepage|afterband|afterbuild|afterclosetables|aftercursorattach|aftercursorclose|aftercursordetach|aftercursorfill|aftercursorrefresh|aftercursorupdate|afterdelete|afterdock|afterinsert|afterrecordrefresh|afterreport|afterrowcolchange|afterupdate|alias|align|alignment|allowaddnew|allowautocolumnfit|allowcellselection|allowdelete|allowheadersizing|allowinsert|allowmodalmessages|allowoutput|allowrowsizing|allowsimultaneousfetch|allowtabs|allowupdate|alwaysonbottom|alwaysontop|anchor|applydiffgram|attach|autoactivate|autocenter|autoclosetables|autocomplete|autocompsource|autocomptable|autofit|autohidescrollbar|autoopen|autoopentables|autorelease|autosize|autoverbmenu|backcolor|backstyle|baseclass|batchupdatecount|beforeband|beforebuild|beforecursorattach|beforecursorclose|beforecursordetach|beforecursorfill|beforecursorrefresh|beforecursorupdate|beforedelete|beforedock|beforeinsert|beforeopentables|beforerecordrefresh|beforereport|beforerowcolchange|beforeupdate|bindcontrols|bordercolor|borderstyle|borderwidth|bound|boundcolumn|boundto|box|breakonerror|buffermode|buffermodeoverride|buttoncount|buttons|calladjustobjectsize|callevaluatecontents|cancel|cancelreport|caption|centered|century|changestocursor|childalias|childorder|childtable|circle|class|classlibrary|clear|clearstatus|click|clipcontrols|closable|closetables|cls|codepage|colorscheme|colorsource|columncount|columnlines|columnorder|columns|columnwidths|commandclauses|commandtargetexec|commandtargetquery|comment|comparememo|conflictcheckcmd|conflictchecktype|containerrelease|containerreleasetype|continuousscroll|controlbox|controlcount|controls|controlsource|conversionfunc|count|currentcontrol|currentdatasession|currentpass|currentx|currenty|cursorattach|cursordetach|cursorfill|cursorrefresh|cursorschema|cursorsource|cursorstatus|curvature|database|datasession|datasessionid|datasource|datasourcetype|datatype|dateformat|datemark|dblclick|deactivate|declarexmlprefix|declass|declasslibrary|default|defolelcid|deletecmd|deletecmddatasource|deletecmddatasourcetype|deletecolumn|deleted|deletemark|desktop|destroy|details|disabledbackcolor|disabledforecolor|disableditembackcolor|disableditemforecolor|disabledpicture|disableencode|displaycount|displayvalue|dock|dockable|docked|dockposition|documentfile|domessage|doscroll|dostatus|doverb|downclick|downpicture|drag|dragdrop|dragicon|dragmode|dragover|draw|drawmode|drawstyle|drawwidth|dropdown|dynamicalignment|dynamicbackcolor|dynamiccurrentcontrol|dynamicfontbold|dynamicfontitalic|dynamicfontname|dynamicfontoutline|dynamicfontshadow|dynamicfontsize|dynamicfontstrikethru|dynamicfontunderline|dynamicforecolor|dynamicinputmask|dynamiclineheight|enabled|enablehyperlinks|error|errormessage|errorno|evaluatecontents|exclusive|fetchasneeded|fetchmemo|fetchmemocmdlist|fetchmemodatasource|fetchmemodatasourcetype|fetchsize|fillcolor|fillstyle|filter|firstelement|firstnestedtable|flags|fontbold|fontcharset|fontcondense|fontextend|fontitalic|fontname|fontoutline|fontshadow|fontsize|fontstrikethru|fontunderline|forceclosetag|forecolor|format|formattedoutput|formcount|forms|fractiondigits|frxdatasession|gdiplusgraphics|getdockstate|getkey|getpageheight|getpagewidth|goback|goforward|gotfocus|gridhittest|gridlinecolor|gridlines|gridlinewidth|halfheightcaption|headerclass|headerclasslibrary|headerheight|height|helpcontextid|hide|hidedoc|hideselection|highlight|highlightbackcolor|highlightforecolor|highlightrow|highlightrowlinewidth|highlightstyle|hostname|hours|hscrollsmallchange|hwnd|icon|imemode|includepageinoutput|increment|incrementalsearch|indextoitemid|init|initialselectedalias|inputmask|insertcmd|insertcmddatasource|insertcmddatasourcetype|insertcmdrefreshcmd|insertcmdrefreshfieldlist|insertcmdrefreshkeyfieldlist|integralheight|interactivechange|interval|isattribute|isbase64|isbinary|isdiffgram|isloaded|isnull|item|itembackcolor|itemdata|itemforecolor|itemiddata|itemidtoindex|itemtips|ixmldomelement|keyboardhighvalue|keyboardlowvalue|keyfield|keyfieldlist|keypress|keypreview|keysort|left|leftcolumn|line|linecontents|lineno|lineslant|linkmaster|list|listcount|listenertype|listindex|listitem|listitemid|load|loadreport|loadxml|lockcolumns|lockcolumnsleft|lockscreen|lostfocus|macdesktop|mapbinary|mapn19_4tocurrency|mapvarchar|margin|maxbutton|maxheight|maxleft|maxlength|maxrecords|maxtop|maxwidth|mdiform|memberclass|memberclasslibrary|memowindow|message|middleclick|minbutton|minheight|minwidth|mousedown|mouseenter|mouseicon|mouseleave|mousemove|mousepointer|mouseup|mousewheel|movable|move|moved|moveitem|moverbars|multiselect|name|navigateto|nest|nestedinto|newindex|newitemid|newobject|nextsiblingtable|nocptrans|nodata|nodataonload|nulldisplay|numberofelements|objects|oleclass|olecompletedrag|oledrag|oledragdrop|oledragmode|oledragover|oledragpicture|oledropeffects|oledrophasdata|oledropmode|oledroptextinsertion|olegivefeedback|olelcid|olesetdata|olestartdrag|oletypeallowed|onetomany|onmoveitem|onpreviewclose|opentables|openviews|openwindow|optimize|order|orderdirection|outputpage|outputpagecount|outputtype|pagecount|pageheight|pageno|pageorder|pages|pagetotal|pagewidth|paint|panel|panellink|parent|parentalias|parentclass|parenttable|partition|passwordchar|picture|picturemargin|pictureposition|pictureselectiondisplay|picturespacing|pictureval|point|polypoints|prepared|preservewhitespace|previewcontainer|print|printcachedpages|printjobname|procedure|programmaticchange|pset|queryaddfile|querymodifyfile|querynewfile|queryremovefile|queryrunfile|queryunload|quietmode|rangehigh|rangelow|readactivate|readcycle|readdeactivate|readexpression|readlock|readmethod|readmouse|readonly|readsave|readshow|readtimeout|readvalid|readwhen|recordmark|recordrefresh|recordsource|recordsourcetype|refresh|refreshalias|refreshcmd|refreshcmddatasource|refreshcmddatasourcetype|refreshignorefieldlist|refreshtimestamp|relationalexpr|relativecolumn|relativerow|release|releasetype|releasexml|remove|removeitem|removelistitem|removeobject|render|requery|reset|resettodefault|resizable|resize|respectcursorcp|respectnesting|rightclick|righttoleft|rotateflip|rotation|rowcolchange|rowheight|rowsource|rowsourcetype|run|saveas|saveasclass|scalemode|sccdestroy|sccinit|scrollbars|scrolled|seconds|selectcmd|selected|selectedbackcolor|selectedforecolor|selectedid|selecteditembackcolor|selecteditemforecolor|selectionnamespaces|selectonentry|sellength|selstart|seltext|sendgdiplusimage|sendupdates|setall|setfocus|setviewport|show|showdoc|showintaskbar|showtips|showwhatsthis|showwindow|sizable|sizebox|som|sorted|sparse|specialeffect|spinnerhighvalue|spinnerlowvalue|splitbar|stacklevel|statusbartext|stretch|strictdateentry|style|supportslistenertype|tabindex|tables|taborientation|tabs|tabstop|tabstretch|tabstyle|tag|terminateread|text|textheight|textwidth|themes|timer|timestampfieldlist|titlebar|tocursor|tooltiptext|top|topindex|topitemid|toxml|twopassprocess|uienable|undock|unicode|unload|unloadreport|unnest|upclick|updatablefieldlist|updatecmd|updatecmddatasource|updatecmddatasourcetype|updatecmdrefreshcmd|updatecmdrefreshfieldlist|updatecmdrefreshkeyfieldlist|updategram|updategramschemalocation|updatenamelist|updatestatus|updatetype|usecodepage|usecursorschema|usededatasource|usememosize|uservalue|usetransactions|utf8encoded|valid|value|view|viewportheight|viewportleft|viewporttop|viewportwidth|visible|visualeffect|vscrollsmallchange|whatsthisbutton|whatsthishelp|whatsthishelpid|whatsthismode|when|wheretype|width|windowlist|windowstate|windowtype|wordwrap|wrapcharincdata|wrapincdata|wrapmemoincdata|writeexpression|writemethod|xmladapter|xmlconstraints|xmlname|xmlnameisxpath|xmlnamespace|xmlprefix|xmlschemalocation|xmltable|xmltype|xsdfractiondigits|xsdmaxlength|xsdtotaldigits|xsdtype|zoombox|zorder)\b)</string>
+			<key>name</key>
+			<string>keyword.vfp</string>
+		</dict>
+
+		<!-- TYPES-->
+		<dict>
+			<key>match</key>
+			<string>(?i:\b(array|binary|blob|boolean|byte|character|currency|date|datetime|decimal|double|float|general|integer|logical|long|memo|number|numeric|object|short|single|string|varbinary|varchar|variant|void)\b)</string>
+			<key>name</key>
+			<string>support.type.vfp</string>
+		</dict>
+
+		<!-- OTHER TOKENS-->
+		<dict>
+			<key>match</key>
+			<string>(?i:\b(addi(?:t|ti|tiv|tive)?|afte[r]?|agai[n]?|aind(?:e|en|ent)?|alig(?:n|nr|nri|nrig|nrigh|nright)?|all|alt|alte(?:r|rn|rna|rnat|rnate)?|ansi|any|apla(?:b|bo|bou|bout)?|app|as|asc|asce(?:n|nd|ndi|ndin|nding)?|asci[i]?|at|attr(?:i|ib|ibu|ibut|ibute|ibutes)?|auto(?:i|in|inc)?|auto(?:i|in|inc|ince|incer|incerr|incerro|incerror)?|auto(?:m|ma|mat|mati|matic)?|auto(?:s|sa|sav|save)?|avg|bar|befo(?:r|re)?|bell|betw(?:e|ee|een)?|bitm(?:a|ap)?|blan[k]?|blin[k]?|bloc(?:k|ks|ksi|ksiz|ksize)?|bord(?:e|er)?|bott(?:o|om)?|brst(?:a|at|atu|atus)?|buck(?:e|et)?|buff(?:e|er|ers)?|by|cand(?:i|id|ida|idat|idate)?|carr[y]?|casc(?:a|ad|ade)?|cata(?:l|lo|log)?|cdx|cent(?:e|er)?|cent(?:u|ur|ury)?|cga|chec[k]?|clas(?:s|sl|sli|slib)?|cloc[k]?|cnt|code(?:p|pa|pag|page)?|coll(?:a|at|ate)?|colo[r]?|com1|com2|comm(?:a|an|and)?|comp(?:a|ac|act)?|comp(?:a|at|ati|atib|atibl|atible)?|comp(?:r|re|res|ress)?|conf(?:i|ir|irm)?|conn(?:e|ec|ect|ecti|ectio|ection)?|conn(?:e|ec|ect|ecti|ectio|ection|ections)?|conn(?:s|st|str|stri|strin|string)?|conn(?:s|st|str|stri|strin|string)?|conn(?:s|st|str|stri|strin|string)?|cons(?:o|ol|ole)?|copi(?:e|es)?|cpco(?:m|mp|mpi|mpil|mpile)?|cpdi(?:a|al|alo|alog)?|csv|cycl[e]?|data(?:b|ba|bas|base|bases)?|data(?:s|so|sou|sour|sourc|source)?|db4|dbc|dbce(?:v|ve|ven|vent|vents)?|dbf|dbme(?:m|mo|mo3)?|debu[g]?|deci(?:m|ma|mal|mals)?|defa(?:u|ul|ult|ults|ultso|ultsou|ultsour|ultsourc|ultsource)?|dele(?:t|te|tet|teta|tetab|tetabl|tetable|tetables)?|deli(?:m|mi|mit|mite|mited)?|deli(?:m|mi|mit|mite|miter|miters)?|desc(?:e|en|end|endi|endin|ending)?|desi(?:g|gn)?|deve(?:l|lo|lop|lopm|lopme|lopmen|lopment)?|devi(?:c|ce)?|dif|disa(?:b|bl|ble|bled)?|dist(?:i|in|inc|inct)?|dlls|dohi(?:s|st|sto|stor|story)?|dos|dosm(?:e|em)?|driv(?:e|er)?|dupl(?:e|ex)?|echo|edit(?:w|wo|wor|work)?|ega2[5]?|ega4[3]?|ems|ems6[4]?|encr(?:y|yp|ypt)?|encr(?:y|yp|ypt|ypti|yptio|yption)?|envi(?:r|ro|ron|ronm|ronme|ronmen|ronment)?|esca(?:p|pe)?|even(?:t|ts)?|exac[t]?|exce(?:p|pt)?|exe|exis(?:t|ts)?|expr(?:e|es|ess|essi|essio|ession)?|exte(?:n|nd|nde|nded)?|f11f(?:1|12)?|fdow|fetc[h]?|fiel[d]?|fiel(?:d|ds)?|file|file[s]?|fill|fixe[d]?|flag[s]?|fold(?:c|co|con|cons|const)?|font|foot(?:e|er)?|forc[e]?|fore(?:i|ig|ign)?|fox2[x]?|foxo(?:b|bj|bje|bjec|bject)?|foxp(?:l|lu|lus)?|free|free(?:z|ze)?|from|full(?:p|pa|pat|path)?|fw2|fwee[k]?|get|gets|glob(?:a|al)?|grou[p]?|grow|half(?:h|he|hei|heig|heigh|height)?|havi(?:n|ng)?|head(?:i|in|ing)?|head(?:i|in|ing|ings)?|help(?:s|st|str|stri|strin|string)?|help(?:f|fi|fil|filt|filte|filter)?|hist(?:o|or|ory)?|hmem(?:o|or|ory)?|hour[s]?|id|impl(?:e|em|eme|emen|ement|ements)?|in|inde(?:x|xe|xes)?|info(?:r|rm|rma|rmat|rmati|rmatio|rmation)?|inst(?:r|ru|ruc|ruct)?|int|inte(?:n|ns|nsi|nsit|nsity)?|inte(?:r|rs|rse|rsec|rsect)?|into|is|isom(?:e|et|etr|etri|etric)?|key|keyc(?:o|ol|olu|olum|olumn|olumns)?|keyc(?:o|om|omp)?|keys(?:e|et)?|last|ledi[t]?|leve[l]?|libr(?:a|ar|ary)?|like|link(?:e|ed)?|lock|loge(?:r|rr|rro|rror|rrors)?|lpar(?:t|ti|tit|titi|titio|tition)?|mac|macd(?:e|es|esk|eskt|eskto|esktop)?|mach(?:e|el|elp)?|mack(?:e|ey)?|macr(?:o|os)?|mark|mast(?:e|er)?|max|maxm(?:e|em)?|mdi|meml(?:i|im|imi|imit)?|memo(?:r|ry)?|memo[s]?|memo(?:w|wi|wid|widt|width)?|memv(?:a|ar)?|menu[s]?|mess(?:a|ag|age|ages)?|midd(?:l|le)?|min|mini(?:m|mi|miz|mize)?|minu[s]?|mod|moda[l]?|modu(?:l|le)?|mono(?:4|43)?|move(?:r|rs)?|mult(?:i|il|ilo|iloc|ilock|ilocks)?|mvar(?:s|si|siz)?|mvco(?:u|un|unt)?|near|nego(?:t|ti|tia|tiat|tiate)?|next(?:v|va|val|valu|value)?|noal(?:i|ia|ias)?|noap(?:p|pe|pen|pend)?|noca(?:p|pt|pti|ptio|ption|ptions)?|nocl(?:e|ea|ear)?|nocl(?:o|os|ose)?|noco(?:n|ns|nso|nsol|nsole)?|noda(?:t|ta)?|node(?:b|bu|bug)?|node(?:l|le|let|lete)?|nodi(?:a|al|alo|alog)?|nodu[p]?|noed(?:i|it)?|noej(?:e|ec|ect)?|noen(?:v|vi|vir|viro|viron|vironm|vironme|vironmen|vironment)?|nofl(?:o|oa|oat)?|nofo(?:l|ll|llo|llow)?|nogr(?:o|ow)?|noin(?:i|it)?|nolg(?:r|ri|rid)?|noli(?:n|nk)?|nolo(?:c|ck)?|noma(?:r|rg|rgi|rgin)?|nomd[i]?|nome(?:n|nu)?|nomi(?:n|ni|nim|nimi|nimiz|nimize)?|nomo(?:d|di|dif|dify)?|nomo(?:u|us|use)?|none|noop(?:t|ti|tim|timi|timiz|timize)?|noov(?:e|er|erw|erwr|erwri|erwrit|erwrite)?|nopa(?:g|ge|gee|geej|geeje|geejec|geeject)?|nopr(?:o|oj|oje|ojec|oject|ojecth|ojectho|ojecthoo|ojecthook)?|nopr(?:o|om|omp|ompt)?|nore(?:a|ad)?|nore(?:f|fr|fre|fres|fresh)?|nore(?:q|qu|que|quer|query)?|nore(?:s|se|set)?|norg(?:r|ri|rid)?|norm|norm(?:a|al)?|nosa(?:v|ve)?|nosh(?:a|ad|ado|adow)?|nosh(?:o|ow)?|nosp(?:a|ac|ace)?|nota[b]?|noti(?:f|fy)?|noup(?:d|da|dat|date)?|nova(?:l|li|lid|lida|lidat|lidate)?|nove(?:r|ri|rif|rify)?|nowa(?:i|it)?|nowi(?:n|nd|ndo|ndow)?|nowr(?:a|ap)?|nozo(?:o|om)?|npv|null|obje(?:c|ct|cts)?|odom(?:e|et|ete|eter)?|of|off|oleo(?:b|bj|bje|bjec|bject|bjects)?|only|opti(?:m|mi|miz|mize)?|orie(?:n|nt|nta|ntat|ntati|ntatio|ntation)?|outp(?:u|ut)?|outs(?:h|ho|how)?|over(?:l|la|lay)?|over(?:w|wr|wri|writ|write)?|pad|pale(?:t|tt|tte)?|pape(?:r|rl|rle|rlen|rleng|rlengt|rlength)?|pape(?:r|rs|rsi|rsiz|rsize)?|pape(?:r|rw|rwi|rwid|rwidt|rwidth)?|pass(?:w|wo|wor|word)?|path|patt(?:e|er|ern)?|paus[e]?|pdox|pdse(?:t|tu|tup)?|pen|pfs|pixe(?:l|ls)?|plai[n]?|popu(?:p|ps)?|prec(?:i|is|isi|isio|ision)?|pref(?:e|er|ere|eren|erenc|erence)?|pret(?:e|ex|ext)?|pret(?:e|ex|ext)?|prev(?:i|ie|iew)?|prim(?:a|ar|ary)?|prin(?:t|te|ter)?|prin(?:t|tq|tqu|tqua|tqual|tquali|tqualit|tquality)?|proc(?:e|ed|edu|edur|edure|edures)?|prod(?:u|uc|uct|ucti|uctio|uction)?|prog(?:c|ca|cac|cach|cache)?|prog(?:r|ra|ram)?|prog(?:w|wo|wor|work)?|proj(?:e|ec|ect)?|prom(?:p|pt)?|quer[y]?|rand(?:o|om)?|rang[e]?|read(?:b|bo|bor|bord|borde|border)?|read(?:e|er|err|erro|error)?|read(?:w|wr|wri|writ|write)?|reco(?:r|rd)?|reco(?:v|ve|ver)?|redi[t]?|refe(?:r|re|ren|renc|rence)?|refe(?:r|re|ren|renc|rence|rences)?|rela(?:t|ti|tiv|tive)?|remo(?:t|te)?|repr(?:o|oc|oce|oces|ocess)?|reso(?:u|ur|urc|urce)?|rest|rest(?:r|ri|ric|rict)?|rgb|righ[t]?|row|rows(?:e|et)?|rpd|runt(?:i|im|ime)?|safe(?:t|ty)?|same|samp(?:l|le)?|say|scal[e]?|sche(?:m|me)?|scor(?:e|eb|ebo|eboa|eboar|eboard)?|scre(?:e|en)?|sdf|seco(?:n|nd|nds)?|sele(?:c|ct|cti|ctio|ction)?|shad(?:o|ow|ows)?|shar[e]?|shar(?:e|ed)?|shee[t]?|shel[l]?|shif[t]?|shut(?:d|do|dow|down)?|some|sort(?:w|wo|wor|work)?|spac[e]?|sql|stan(?:d|da|dal|dalo|dalon|dalone)?|stat(?:u|us)?|std|step|stic(?:k|ky)?|stru(?:c|ct|ctu|ctur|cture)?|subc(?:l|la|las|lass)?|summ(?:a|ar|ary)?|sylk|sysf(?:o|or|orm|orma|ormat|ormats)?|sysm(?:e|en|enu|enus)?|syst(?:e|em)?|tab|tabl(?:e|ep|epr|epro|eprom|epromp|eprompt)?|tabl(?:e|es)?|talk|tedi[t]?|text(?:m|me|mer|merg|merge)?|then|time|time(?:o|ou|out)?|titl(?:e|es)?|tmpf(?:i|il|ile|iles)?|to|topi[c]?|tran(?:s|sa|sac|sact|sacti|sactio|saction)?|trap|trbe(?:t|tw|twe|twee|tween)?|trig(?:g|ge|ger)?|ttop(?:t|ti|tio|tion)?|type(?:a|ah|ahe|ahea|ahead)?|udfp(?:a|ar|arm|arms)?|unio[n]?|uniq(?:u|ue)?|user(?:i|id)?|user[s]?|valu(?:e|es)?|var|varc(?:h|ha|har|harm|harma|harmap|harmapp|harmappi|harmappin|harmapping)?|verb|vga2[5]?|vga5[0]?|view[s]?|volu(?:m|me)?|wher[e]?|wind(?:o|ow|ows)?|wk1|wk3|wks|work(?:a|ar|are|area)?|wp|wr1|wrap|wrk|xml|xcmd(?:f|fi|fil|file)?|xl5|xl8|xls|yres(?:o|ol|olu|olut|oluti|olutio|olution)?|zoom|on|stri(?:c|ct|ctd|ctda|ctdat|ctdate)?|whil[e]?|with)\b)</string>
+			<key>name</key>
+			<string>keyword.vfp</string>
+		</dict>
+
+		<!-- SYSTEM VARIABLES-->
+		<dict>
+			<key>match</key>
+			<string>(?i:\b(_alignment|_asciicols|_asciirows|_assist|_beautify|_box|_browser|_builder|_calcmem|_calcvalue|_cliptext|_converter|_coverage|_coverage|_curobj|_dblclick|_diarydate|_dos|_foxcode|_foxdoc|_foxgraph|_foxtask|_gallery|_gengraph|_genhtml|_genmenu|_genpd|_genscrn|_genxtab|_getexpr|_include|_incseek|_indent|_lmargin|_mac|_mbr_appnd|_mbr_cpart|_mbr_delet|_mbr_font|_mbr_goto|_mbr_grid|_mbr_link|_mbr_mode|_mbr_mvfld|_mbr_mvprt|_mbr_seek|_mbr_sp100|_mbr_sp200|_mbr_szfld|_mbrowse|_mda_appnd|_mda_avg|_mda_brow|_mda_calc|_mda_copy|_mda_count|_mda_label|_mda_pack|_mda_reprt|_mda_rindx|_mda_setup|_mda_sort|_mda_sp100|_mda_sp200|_mda_sp300|_mda_sum|_mda_total|_mdata|_mdiary|_med_clear|_med_copy|_med_cut|_med_cvtst|_med_find|_med_finda|_med_goto|_med_insob|_med_link|_med_obj|_med_paste|_med_pref|_med_pstlk|_med_redo|_med_repl|_med_repla|_med_slcta|_med_sp100|_med_sp200|_med_sp300|_med_sp400|_med_sp500|_med_undo|_medit|_menudesigner|_mfi_clall|_mfi_close|_mfi_export|_mfi_import|_mfi_new|_mfi_open|_mfi_pgset|_mfi_prevu|_mfi_print|_mfi_quit|_mfi_revrt|_mfi_savas|_mfi_save|_mfi_send|_mfi_setup|_mfi_sp100|_mfi_sp200|_mfi_sp300|_mfi_sp400|_mfile|_mfiler|_mfirst|_mlabel|_mlast|_mline|_mmacro|_mmbldr|_mpr_beaut|_mpr_cancl|_mpr_compl|_mpr_do|_mpr_docum|_mpr_gener|_mpr_graph|_mpr_resum|_mpr_sp100|_mpr_sp200|_mpr_sp300|_mpr_suspend|_mprog|_mproj|_mrc_appnd|_mrc_chnge|_mrc_cont|_mrc_delet|_mrc_goto|_mrc_locat|_mrc_recal|_mrc_repl|_mrc_seek|_mrc_sp100|_mrc_sp200|_mrecord|_mreport|_mrqbe|_mscreen|_msm_data|_msm_edit|_msm_file|_msm_format|_msm_prog|_msm_recrd|_msm_systm|_msm_text|_msm_tools|_msm_view|_msm_windo|_mst_about|_mst_ascii|_mst_calcu|_mst_captr|_mst_dbase|_mst_diary|_mst_filer|_mst_help|_mst_hphow|_mst_hpsch|_mst_macro|_mst_office|_mst_puzzl|_mst_sp100|_mst_sp200|_mst_sp300|_mst_specl|_msysmenu|_msystem|_mtable|_mtb_appnd|_mtb_cpart|_mtb_delet|_mtb_delrc|_mtb_goto|_mtb_link|_mtb_mvfld|_mtb_mvprt|_mtb_props|_mtb_recal|_mtb_sp100|_mtb_sp200|_mtb_sp300|_mtb_sp400|_mtb_szfld|_mwi_arran|_mwi_clear|_mwi_cmd|_mwi_color|_mwi_debug|_mwi_hide|_mwi_hidea|_mwi_min|_mwi_move|_mwi_rotat|_mwi_showa|_mwi_size|_mwi_sp100|_mwi_sp200|_mwi_trace|_mwi_view|_mwi_zoom|_mwindow|_mwizards|_mwz_all|_mwz_form|_mwz_foxdoc|_mwz_import|_mwz_label|_mwz_mail|_mwz_pivot|_mwz_query|_mwz_reprt|_mwz_table|_mwz_upsizing|_netware|_objectbrowser|_oracle|_padvance|_pageno|_pagetotal|_pbpage|_pcolno|_pcopies|_pdriver|_pdsetup|_pecode|_peject|_pepage|_pform|_plength|_plineno|_ploffset|_ppitch|_pquality|_pretext|_pscode|_pspacing|_pwait|_reportbuilder|_reportoutput|_reportpreview|_rmargin|_runactivedoc|_scctext|_screen|_shell|_spellchk|_sqlserver|_startup|_tabs|_tally|_tasklist|_text|_throttle|_tooltiptimeout|_transport|_triggerlevel|_unix|_vfp|_windows|_wizard|_wrap|this|thisform|thisformset)\b)</string>
+			<key>name</key>
+			<string>variable.language.vfp</string>
+		</dict>
+
+		<!-- ARRAYS-->
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\b(?i:m\.)?[A-Za-z_]\w*[ |\t]*)(\[)</string>
+		</dict>
+
+		<!-- STRINGS-->
+		<dict>
+			<key>match</key>
+			<string>'[^']*'</string>
+			<key>name</key>
+			<string>string.quoted.single.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>"[^"]*"</string>
+			<key>name</key>
+			<string>string.quoted.double.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\[[^\]]*\]</string>
+			<key>name</key>
+			<string>string.quoted.triple.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>&amp;\w*</string>
+			<key>name</key>
+			<string>string.interpolated.vfp</string>
+		</dict>
+
+		<!-- VARIABLES-->
+		<dict>
+			<key>match</key>
+			<string>\b(?i:m\.)[A-Za-z_]\w*\b</string>
+			<key>name</key>
+			<string>variable.other.vfp</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.vfp</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.vfp</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\b[A-Za-z_]\w*[ |\t]*)?(?i:(\+|-|\*|/|%|\^|\*\*|\$|==|=|&lt;|&lt;=|&gt;|&gt;=|&lt;&gt;|#|!=|!|\.or\.|\.and\.|\.not\.|\bor\b|\band\b|\bnot\b))([ |\t]*(?i:m\.)?[A-Za-z_]\w*)(\s|,|;|\))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.vfp</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.vfp</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\b[A-Za-z_]\w*[ |\t]*)(?i:(\+|-|\*|/|%|\^|\*\*|\$|==|=|&lt;|&lt;=|&gt;|&gt;=|&lt;&gt;|#|!=|!|\.or\.|\.and\.|\.not\.|\bor\b|\band\b|\bnot\b))</string>
+		</dict>
+
+		<!-- OPERATORS-->
+		<dict>
+			<key>match</key>
+			<string>(?i:(\+|-|\*|/|%|\^|\*\*|\$|==|=|&lt;|&lt;=|&gt;|&gt;=|&lt;&gt;|#|!=|!|\.or\.|\.and\.|\.not\.|\bor\b|\band\b|\bnot\b))</string>
+			<key>name</key>
+			<string>keyword.operator.vfp</string>
+		</dict>
+
+		<!-- NUMERICS-->
+		<dict>
+			<key>match</key>
+			<string>\b(0(x|X|h|H)[0-9a-fA-F]*)\b</string>
+			<key>name</key>
+			<string>constant.numeric.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(\$( |\t)*-?\d+(\.?\d*)?)\b</string>
+			<key>name</key>
+			<string>constant.numeric.vfp</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(\d+(\.?\d*)?(e(\+|-)?\d*)?)\b</string>
+			<key>name</key>
+			<string>constant.numeric.vfp</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.vfp</string>
+	<key>uuid</key>
+	<string>8DE7EBCD-DBDB-47F5-A9A3-1276BB82C3F4</string>
+</dict>
+</plist>
