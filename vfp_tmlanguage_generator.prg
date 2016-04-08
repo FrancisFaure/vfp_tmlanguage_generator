@@ -201,6 +201,10 @@ dimension aToken[ALEN(aToken)+1]
 aToken[ALEN(aToken)] = "strictdate"
 dimension aToken[ALEN(aToken)+1]
 aToken[ALEN(aToken)] = "while"
+dimension aToken[ALEN(aToken)+1]
+aToken[ALEN(aToken)] = "case" && do case
+dimension aToken[ALEN(aToken)+1]
+aToken[ALEN(aToken)] = "each" && for each
 *
 =asort(aToken)
 sxml = ""
