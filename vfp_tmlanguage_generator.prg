@@ -21,7 +21,8 @@ set textmerge delimiters
 #define C_MESSAGEBOX_TITLE                 "(VS Code) Visual FoxPro language"
 * 0.1.0 Initial Commit
 * 0.1.1 Snippets added
-#define C_VERSION                          "0.1.1"
+* 0.1.2 utf8( ) function updated by "akvalibra"
+#define C_VERSION                          "0.1.2"
 
 *** -------------- TextMate String ---------------------------
 #define C_TM_NAME_COMMENTS     "comment." + C_LANGUAGE
@@ -599,7 +600,8 @@ procedure DeleteFileIfExist(lsFilename as string)
 endproc
 
 function utf8(m.lsString as string) as string
-  return strconv(strconv(m.lsString, 1),9)
+  * return strconv(strconv(m.lsString, 1),9) && "akvalibra" update
+  return strconv(m.lsString,9)
 endfunc
 
 function package_json() as string
