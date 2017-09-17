@@ -40,67 +40,67 @@
 			<key>match</key>
 			<string>^[ |\t]*(?i:(cd|do|go|if|md|on|rd)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(add|dir|end|for|pop|run|set|sum|try|use|zap)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(call|case|copy|dock|drop|edit|else|exit|find|free|goto|help|hide|join|list|load|loop|menu|move|next|open|pack|play|push|quit|read|save|scan|seek|show|size|skip|sort|text|type|wait|with|zoom)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(alte[r]?|begi[n]?|blan[k]?|buil[d]?|catc[h]?|chdi[r]?|clea[r]?|clos[e]?|coun[t]?|debu[g]?|ejec[t]?|endd[o]?|endi[f]?|eras[e]?|erro[r]?|flus[h]?|inde[x]?|inpu[t]?|labe[l]?|loca[l]?|mkdi[r]?|mous[e]?|rese[t]?|retr[y]?|rmdi[r]?|stor[e]?|thro[w]?|tota[l]?)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(acce(?:p|pt)?|appe(?:n|nd)?|asse(?:r|rt)?|assi(?:s|st)?|brow(?:s|se)?|canc(?:e|el)?|chan(?:g|ge)?|crea(?:t|te)?|defi(?:n|ne)?|dele(?:t|te)?|endf(?:o|or)?|endt(?:r|ry)?|expo(?:r|rt)?|gath(?:e|er)?|hidd(?:e|en)?|ifnd(?:e|ef)?|impo(?:r|rt)?|inse(?:r|rt)?|loca(?:t|te)?|logo(?:u|ut)?|modi(?:f|fy)?|publ(?:i|ic)?|reca(?:l|ll)?|remo(?:v|ve)?|rena(?:m|me)?|repo(?:r|rt)?|resu(?:m|me)?|retu(?:r|rn)?|scro(?:l|ll)?|sele(?:c|ct)?|unlo(?:c|ck)?|upda(?:t|te)?)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(aver(?:a|ag|age)?|comp(?:i|il|ile)?|decl(?:a|ar|are)?|disp(?:l|la|lay)?|endc(?:a|as|ase)?|endf(?:u|un|unc)?|endp(?:r|ro|roc)?|ends(?:c|ca|can)?|endt(?:e|ex|ext)?|endw(?:i|it|ith)?|fina(?:l|ll|lly)?|gete(?:x|xp|xpr)?|priv(?:a|at|ate)?|rein(?:d|de|dex)?|rele(?:a|as|ase)?|repl(?:a|ac|ace)?|rest(?:o|or|ore)?|scat(?:t|te|ter)?|susp(?:e|en|end)?)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(acti(?:v|va|vat|vate)?|cont(?:i|in|inu|inue)?|debu(?:g|go|gou|gout)?|doev(?:e|en|ent|ents)?|exte(?:r|rn|rna|rnal)?|func(?:t|ti|tio|tion)?|keyb(?:o|oa|oar|oard)?|prin(?:t|tj|tjo|tjob)?|regi(?:o|on|ona|onal)?|roll(?:b|ba|bac|back)?|vali(?:d|da|dat|date)?)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(calc(?:u|ul|ula|ulat|ulate)?|dime(?:n|ns|nsi|nsio|nsion)?|dire(?:c|ct|cto|ctor|ctory)?|endd(?:e|ef|efi|efin|efine)?|node(?:f|fa|fau|faul|fault)?|othe(?:r|rw|rwi|rwis|rwise)?|proc(?:e|ed|edu|edur|edure)?|prot(?:e|ec|ect|ecte|ected)?|runs(?:c|cr|cri|crip|cript)?)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(deac(?:t|ti|tiv|tiva|tivat|tivate)?|impl(?:e|em|eme|emen|ement|ements)?|para(?:m|me|met|mete|meter|meters)?)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(?i:(endp(?:r|ri|rin|rint|rintj|rintjo|rintjob)?|lpar(?:a|am|ame|amet|amete|ameter|ameters)?)\b)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^[ |\t]*(!|=|\?\?\?|\?\?|\?|@|\\\\|\\)</string>
 			<key>name</key>
-			<string>support.other.vfp</string>
+			<string>storage.modifier.vfp</string>
 		</dict>
 
 		<!-- FUNCTIONS-->
@@ -110,7 +110,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -122,7 +122,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -134,7 +134,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -146,7 +146,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -158,7 +158,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -170,7 +170,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -182,7 +182,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -194,7 +194,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -206,7 +206,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -218,7 +218,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -230,7 +230,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -242,7 +242,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -254,7 +254,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -266,7 +266,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -278,7 +278,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -290,7 +290,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.function.vfp</string>
+					<string>storage.type.vfp</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -344,7 +344,7 @@
 			<key>match</key>
 			<string>(?i:\b(addi(?:t|ti|tiv|tive)?|afte[r]?|agai[n]?|aind(?:e|en|ent)?|alig(?:n|nr|nri|nrig|nrigh|nright)?|all|alt|alte(?:r|rn|rna|rnat|rnate)?|ansi|any|apla(?:b|bo|bou|bout)?|app|as|asc|asce(?:n|nd|ndi|ndin|nding)?|asci[i]?|at|attr(?:i|ib|ibu|ibut|ibute|ibutes)?|auto(?:i|in|inc)?|auto(?:i|in|inc|ince|incer|incerr|incerro|incerror)?|auto(?:m|ma|mat|mati|matic)?|auto(?:s|sa|sav|save)?|avg|bar|befo(?:r|re)?|bell|betw(?:e|ee|een)?|bitm(?:a|ap)?|blan[k]?|blin[k]?|bloc(?:k|ks|ksi|ksiz|ksize)?|bord(?:e|er)?|bott(?:o|om)?|brst(?:a|at|atu|atus)?|buck(?:e|et)?|buff(?:e|er|ers)?|by|cand(?:i|id|ida|idat|idate)?|carr[y]?|casc(?:a|ad|ade)?|cata(?:l|lo|log)?|cdx|cent(?:e|er)?|cent(?:u|ur|ury)?|cga|chec[k]?|clas(?:s|sl|sli|slib)?|cloc[k]?|cnt|code(?:p|pa|pag|page)?|coll(?:a|at|ate)?|colo[r]?|com1|com2|comm(?:a|an|and)?|comp(?:a|ac|act)?|comp(?:a|at|ati|atib|atibl|atible)?|comp(?:r|re|res|ress)?|conf(?:i|ir|irm)?|conn(?:e|ec|ect|ecti|ectio|ection)?|conn(?:e|ec|ect|ecti|ectio|ection|ections)?|conn(?:s|st|str|stri|strin|string)?|conn(?:s|st|str|stri|strin|string)?|conn(?:s|st|str|stri|strin|string)?|cons(?:o|ol|ole)?|copi(?:e|es)?|cpco(?:m|mp|mpi|mpil|mpile)?|cpdi(?:a|al|alo|alog)?|csv|cycl[e]?|data(?:b|ba|bas|base|bases)?|data(?:s|so|sou|sour|sourc|source)?|db4|dbc|dbce(?:v|ve|ven|vent|vents)?|dbf|dbme(?:m|mo|mo3)?|debu[g]?|deci(?:m|ma|mal|mals)?|defa(?:u|ul|ult|ults|ultso|ultsou|ultsour|ultsourc|ultsource)?|dele(?:t|te|tet|teta|tetab|tetabl|tetable|tetables)?|deli(?:m|mi|mit|mite|mited)?|deli(?:m|mi|mit|mite|miter|miters)?|desc(?:e|en|end|endi|endin|ending)?|desi(?:g|gn)?|deve(?:l|lo|lop|lopm|lopme|lopmen|lopment)?|devi(?:c|ce)?|dif|disa(?:b|bl|ble|bled)?|dist(?:i|in|inc|inct)?|dlls|dohi(?:s|st|sto|stor|story)?|dos|dosm(?:e|em)?|driv(?:e|er)?|dupl(?:e|ex)?|echo|edit(?:w|wo|wor|work)?|ega2[5]?|ega4[3]?|ems|ems6[4]?|encr(?:y|yp|ypt)?|encr(?:y|yp|ypt|ypti|yptio|yption)?|envi(?:r|ro|ron|ronm|ronme|ronmen|ronment)?|esca(?:p|pe)?|even(?:t|ts)?|exac[t]?|exce(?:p|pt)?|exe|exis(?:t|ts)?|expr(?:e|es|ess|essi|essio|ession)?|exte(?:n|nd|nde|nded)?|f11f(?:1|12)?|fdow|fetc[h]?|fiel[d]?|fiel(?:d|ds)?|file|file[s]?|fill|fixe[d]?|flag[s]?|fold(?:c|co|con|cons|const)?|font|foot(?:e|er)?|forc[e]?|fore(?:i|ig|ign)?|fox2[x]?|foxo(?:b|bj|bje|bjec|bject)?|foxp(?:l|lu|lus)?|free|free(?:z|ze)?|from|full(?:p|pa|pat|path)?|fw2|fwee[k]?|get|gets|glob(?:a|al)?|grou[p]?|grow|half(?:h|he|hei|heig|heigh|height)?|havi(?:n|ng)?|head(?:i|in|ing)?|head(?:i|in|ing|ings)?|help(?:s|st|str|stri|strin|string)?|help(?:f|fi|fil|filt|filte|filter)?|hist(?:o|or|ory)?|hmem(?:o|or|ory)?|hour[s]?|id|impl(?:e|em|eme|emen|ement|ements)?|in|inde(?:x|xe|xes)?|info(?:r|rm|rma|rmat|rmati|rmatio|rmation)?|inst(?:r|ru|ruc|ruct)?|int|inte(?:n|ns|nsi|nsit|nsity)?|inte(?:r|rs|rse|rsec|rsect)?|into|is|isom(?:e|et|etr|etri|etric)?|key|keyc(?:o|ol|olu|olum|olumn|olumns)?|keyc(?:o|om|omp)?|keys(?:e|et)?|last|ledi[t]?|leve[l]?|libr(?:a|ar|ary)?|like|link(?:e|ed)?|lock|loge(?:r|rr|rro|rror|rrors)?|lpar(?:t|ti|tit|titi|titio|tition)?|mac|macd(?:e|es|esk|eskt|eskto|esktop)?|mach(?:e|el|elp)?|mack(?:e|ey)?|macr(?:o|os)?|mark|mast(?:e|er)?|max|maxm(?:e|em)?|mdi|meml(?:i|im|imi|imit)?|memo(?:r|ry)?|memo[s]?|memo(?:w|wi|wid|widt|width)?|memv(?:a|ar)?|menu[s]?|mess(?:a|ag|age|ages)?|midd(?:l|le)?|min|mini(?:m|mi|miz|mize)?|minu[s]?|mod|moda[l]?|modu(?:l|le)?|mono(?:4|43)?|move(?:r|rs)?|mult(?:i|il|ilo|iloc|ilock|ilocks)?|mvar(?:s|si|siz)?|mvco(?:u|un|unt)?|near|nego(?:t|ti|tia|tiat|tiate)?|next(?:v|va|val|valu|value)?|noal(?:i|ia|ias)?|noap(?:p|pe|pen|pend)?|noca(?:p|pt|pti|ptio|ption|ptions)?|nocl(?:e|ea|ear)?|nocl(?:o|os|ose)?|noco(?:n|ns|nso|nsol|nsole)?|noda(?:t|ta)?|node(?:b|bu|bug)?|node(?:l|le|let|lete)?|nodi(?:a|al|alo|alog)?|nodu[p]?|noed(?:i|it)?|noej(?:e|ec|ect)?|noen(?:v|vi|vir|viro|viron|vironm|vironme|vironmen|vironment)?|nofl(?:o|oa|oat)?|nofo(?:l|ll|llo|llow)?|nogr(?:o|ow)?|noin(?:i|it)?|nolg(?:r|ri|rid)?|noli(?:n|nk)?|nolo(?:c|ck)?|noma(?:r|rg|rgi|rgin)?|nomd[i]?|nome(?:n|nu)?|nomi(?:n|ni|nim|nimi|nimiz|nimize)?|nomo(?:d|di|dif|dify)?|nomo(?:u|us|use)?|none|noop(?:t|ti|tim|timi|timiz|timize)?|noov(?:e|er|erw|erwr|erwri|erwrit|erwrite)?|nopa(?:g|ge|gee|geej|geeje|geejec|geeject)?|nopr(?:o|oj|oje|ojec|oject|ojecth|ojectho|ojecthoo|ojecthook)?|nopr(?:o|om|omp|ompt)?|nore(?:a|ad)?|nore(?:f|fr|fre|fres|fresh)?|nore(?:q|qu|que|quer|query)?|nore(?:s|se|set)?|norg(?:r|ri|rid)?|norm|norm(?:a|al)?|nosa(?:v|ve)?|nosh(?:a|ad|ado|adow)?|nosh(?:o|ow)?|nosp(?:a|ac|ace)?|nota[b]?|noti(?:f|fy)?|noup(?:d|da|dat|date)?|nova(?:l|li|lid|lida|lidat|lidate)?|nove(?:r|ri|rif|rify)?|nowa(?:i|it)?|nowi(?:n|nd|ndo|ndow)?|nowr(?:a|ap)?|nozo(?:o|om)?|npv|null|obje(?:c|ct|cts)?|odom(?:e|et|ete|eter)?|of|off|oleo(?:b|bj|bje|bjec|bject|bjects)?|only|opti(?:m|mi|miz|mize)?|orie(?:n|nt|nta|ntat|ntati|ntatio|ntation)?|outp(?:u|ut)?|outs(?:h|ho|how)?|over(?:l|la|lay)?|over(?:w|wr|wri|writ|write)?|pad|pale(?:t|tt|tte)?|pape(?:r|rl|rle|rlen|rleng|rlengt|rlength)?|pape(?:r|rs|rsi|rsiz|rsize)?|pape(?:r|rw|rwi|rwid|rwidt|rwidth)?|pass(?:w|wo|wor|word)?|path|patt(?:e|er|ern)?|paus[e]?|pdox|pdse(?:t|tu|tup)?|pen|pfs|pixe(?:l|ls)?|plai[n]?|popu(?:p|ps)?|prec(?:i|is|isi|isio|ision)?|pref(?:e|er|ere|eren|erenc|erence)?|pret(?:e|ex|ext)?|pret(?:e|ex|ext)?|prev(?:i|ie|iew)?|prim(?:a|ar|ary)?|prin(?:t|te|ter)?|prin(?:t|tq|tqu|tqua|tqual|tquali|tqualit|tquality)?|proc(?:e|ed|edu|edur|edure|edures)?|prod(?:u|uc|uct|ucti|uctio|uction)?|prog(?:c|ca|cac|cach|cache)?|prog(?:r|ra|ram)?|prog(?:w|wo|wor|work)?|proj(?:e|ec|ect)?|prom(?:p|pt)?|quer[y]?|rand(?:o|om)?|rang[e]?|read(?:b|bo|bor|bord|borde|border)?|read(?:e|er|err|erro|error)?|read(?:w|wr|wri|writ|write)?|reco(?:r|rd)?|reco(?:v|ve|ver)?|redi[t]?|refe(?:r|re|ren|renc|rence)?|refe(?:r|re|ren|renc|rence|rences)?|rela(?:t|ti|tiv|tive)?|remo(?:t|te)?|repr(?:o|oc|oce|oces|ocess)?|reso(?:u|ur|urc|urce)?|rest|rest(?:r|ri|ric|rict)?|rgb|righ[t]?|row|rows(?:e|et)?|rpd|runt(?:i|im|ime)?|safe(?:t|ty)?|same|samp(?:l|le)?|say|scal[e]?|sche(?:m|me)?|scor(?:e|eb|ebo|eboa|eboar|eboard)?|scre(?:e|en)?|sdf|seco(?:n|nd|nds)?|sele(?:c|ct|cti|ctio|ction)?|shad(?:o|ow|ows)?|shar[e]?|shar(?:e|ed)?|shee[t]?|shel[l]?|shif[t]?|shut(?:d|do|dow|down)?|some|sort(?:w|wo|wor|work)?|spac[e]?|sql|stan(?:d|da|dal|dalo|dalon|dalone)?|stat(?:u|us)?|std|step|stic(?:k|ky)?|stru(?:c|ct|ctu|ctur|cture)?|subc(?:l|la|las|lass)?|summ(?:a|ar|ary)?|sylk|sysf(?:o|or|orm|orma|ormat|ormats)?|sysm(?:e|en|enu|enus)?|syst(?:e|em)?|tab|tabl(?:e|ep|epr|epro|eprom|epromp|eprompt)?|tabl(?:e|es)?|talk|tedi[t]?|text(?:m|me|mer|merg|merge)?|then|time|time(?:o|ou|out)?|titl(?:e|es)?|tmpf(?:i|il|ile|iles)?|to|topi[c]?|tran(?:s|sa|sac|sact|sacti|sactio|saction)?|trap|trbe(?:t|tw|twe|twee|tween)?|trig(?:g|ge|ger)?|ttop(?:t|ti|tio|tion)?|type(?:a|ah|ahe|ahea|ahead)?|udfp(?:a|ar|arm|arms)?|unio[n]?|uniq(?:u|ue)?|user(?:i|id)?|user[s]?|valu(?:e|es)?|var|varc(?:h|ha|har|harm|harma|harmap|harmapp|harmappi|harmappin|harmapping)?|verb|vga2[5]?|vga5[0]?|view[s]?|volu(?:m|me)?|wher[e]?|wind(?:o|ow|ows)?|wk1|wk3|wks|work(?:a|ar|are|area)?|wp|wr1|wrap|wrk|xml|xcmd(?:f|fi|fil|file)?|xl5|xl8|xls|yres(?:o|ol|olu|olut|oluti|olutio|olution)?|zoom|case|each|on|stri(?:c|ct|ctd|ctda|ctdat|ctdate)?|whil[e]?|with)\b)</string>
 			<key>name</key>
-			<string>keyword.vfp</string>
+			<string>keyword.other.vfp</string>
 		</dict>
 
 		<!-- SYSTEM VARIABLES-->

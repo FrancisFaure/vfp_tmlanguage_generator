@@ -50,6 +50,10 @@ rd /S/Q %USERPROFILE%\.vscode\extensions\vfp\
 
 [SNIPPETS](Snippets.md)
 
+## Update September 17, 2017
+
+Visual Studio Code (insiders) now support files.encoding
+
 ## License
 
 [MIT](LICENSE) &copy; Francis FAURE

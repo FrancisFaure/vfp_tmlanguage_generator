@@ -2,15 +2,20 @@
 	"name": "vfp",
 	"displayName": "Language Visual FoxPro",
 	"description": "An extension for VS Code which provides support for the Visual FoxPro language.",
-	"version": "0.1.2",
+	"version": "0.1.4",
 	"publisher": "Francis FAURE",
 	"engines": {
-		"vscode": "^0.10.1"
+		"vscode": "^1"
 	},
 	"categories": [
 		"Languages"
 	],
 	"contributes": {
+		"configurationDefaults": {
+		  "[vfp]": {
+			"files.encoding": "windows1252"
+		  }
+		},
 		"languages": [{
 			"id": "vfp",
 			"aliases": ["Visual FoxPro","Foxpro","FoxPro","foxpro"],

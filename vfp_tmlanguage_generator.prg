@@ -3,9 +3,13 @@
 * January 2016
 * VS Code URL : https://code.visualstudio.com/
 * April 2016 : snippets added
+* September 2017 : CODEPAGE added
 clear
 set exact on
 set textmerge delimiters
+
+* set your codepage here
+#define C_FILES_ENCODING "windows1252"
 
 #define C_CRLF chr(13) + chr(10)
 #define C_TAB  chr(9)
@@ -22,7 +26,9 @@ set textmerge delimiters
 * 0.1.0 Initial Commit
 * 0.1.1 Snippets added
 * 0.1.2 utf8( ) function updated by "akvalibra"
-#define C_VERSION                          "0.1.2"
+* 0.1.3 version VS Code 0.1 -> 1.x spotted by Rick Strahl
+* 0.1.4 version VS Code 1.17 (Insider) support now files encoding !
+#define C_VERSION                          "0.1.4"
 
 *** -------------- TextMate String ---------------------------
 #define C_TM_NAME_COMMENTS     "comment." + C_LANGUAGE
@@ -33,16 +39,16 @@ set textmerge delimiters
 #define C_TM_NAME_STRING3      "string.quoted.triple." + C_LANGUAGE
 #define C_TM_NAME_STRING4      "string.interpolated." + C_LANGUAGE
 #define C_TM_NAME_NUMERICS     "constant.numeric." + C_LANGUAGE
-#define C_TM_NAME_COMMANDS     "support.other." + C_LANGUAGE    && tm type ? storage.type, support.other, keyword
+  #define C_TM_NAME_COMMANDS     "storage.modifier." + C_LANGUAGE    && tm type ? support.other, storage.type, keyword, storage.modifier?
 #define C_TM_NAME_PREPROCESSOR_DIRECTIVES "meta.preprocessor." + C_LANGUAGE && tm type ? support.constant, meta.preprocessor
-#define C_TM_NAME_FUNCTIONS    "support.function." + C_LANGUAGE && support.function, entity.name.function, storage.type, meta.function
-#define C_TM_NAME_BASECLASSES  "support.class." + C_LANGUAGE    && support.class, entity.other.inherited-class, entity.name.type
+  #define C_TM_NAME_FUNCTIONS    "storage.type." + C_LANGUAGE && support.function, entity.name.function, storage.type, meta.function ?
+#define C_TM_NAME_BASECLASSES  "support.class." + C_LANGUAGE    && support.class, entity.other.inherited-class, entity.name.type ?
 #define C_TM_NAME_TYPES        "support.type." + C_LANGUAGE
-#define C_TM_NAME_PEM          "keyword." + C_LANGUAGE && keyword, support.function
+  #define C_TM_NAME_PEM          "keyword." + C_LANGUAGE && keyword, support.function
 #define C_TM_NAME_SYSTEM_VARIABLES "variable.language." + C_LANGUAGE && variable.language, support.variable, constant.character
 #define C_TM_NAME_VARIABLES    "variable.other." + C_LANGUAGE
 #define C_TM_NAME_ARRAYS       "variable.other." + C_LANGUAGE
-#define C_TM_NAME_TOKENS       "keyword." + C_LANGUAGE && keyword, support.other or C_TM_NAME_COMMANDS ?
+#define C_TM_NAME_TOKENS       "keyword.other." + C_LANGUAGE && keyword, keyword.other, support.other or C_TM_NAME_COMMANDS ?
 
 #define C_DEBUG_GENERATE_TMTHEME_TEST .f.
 
@@ -100,8 +106,8 @@ n=alanguage(laCommands, 1)
 
 for i=1 to m.n
   sf=lower(m.laCommands[m.i])
-  if !isalpha(left(m.sf,1)) or ;
-      inlist(m.sf,"note","include","name","ifdef","elif","undefine") && particulars cases
+  if !isalpha(left(m.sf,1)) or ; && particulars cases
+      inlist(m.sf,"note","include","name","ifdef","elif","undefine") && comment and preprocessor directive
     ? "Command ignored:" + m.sf && name are not in array commands
     loop
   endif
@@ -212,8 +218,8 @@ sxml = ""
 for i=1 to alen(aToken)
   aToken[m.i] = lower(alltrim(aToken[m.i]))
   * particulars cases
-  if inlist(aToken[m.i],"or","and","not") or ;
-      ("|"+aToken[m.i]+"|")$("|"+m.lsTypes+"|")
+  if inlist(aToken[m.i],"or","and","not") or ; && operator
+      ("|"+aToken[m.i]+"|")$("|"+m.lsTypes+"|") && type
     ? "Token ignored: '" + m.aToken[m.i] + "' (->Type)"
   else
     sxml = m.sxml + iif(m.i==1,"","|") + split(aToken[m.i])
@@ -610,38 +616,43 @@ function package_json() as string
   lsLanguage = C_LANGUAGE
   local tmLanguage as string
   tmLanguage = C_TMLANGUAGE_FILENAME
-  local lsVersion as string
-  lsVersion = C_VERSION
+  LOCAL lsConfiguration as string
+  lsConfiguration = C_CONFIGURATION_JSON_FILENAME
   local lsSnippets as string
   lsSnippets = C_SNIPPETS_JSON_FILENAME
   text TO m.lsReturn NOSHOW TEXTMERGE
 {
-	"name": "<<m.lsLanguage>>",
+	"name": C_LANGUAGE,
 	"displayName": "Language Visual FoxPro",
 	"description": "An extension for VS Code which provides support for the Visual FoxPro language.",
-	"version": "<<m.lsVersion>>",
+	"version": C_VERSION,
 	"publisher": "Francis FAURE",
 	"engines": {
-		"vscode": "^0.10.1"
+		"vscode": "^1"
 	},
 	"categories": [
 		"Languages"
 	],
 	"contributes": {
+		"configurationDefaults": {
+		  "[<<m.lsLanguage>>]": {
+			"files.encoding": C_FILES_ENCODING
+		  }
+		},
 		"languages": [{
-			"id": "<<m.lsLanguage>>",
+			"id": C_LANGUAGE,
 			"aliases": ["Visual FoxPro","Foxpro","FoxPro","foxpro"],
 			"extensions": [".prg"],
-			"configuration": "./vfp.configuration.json"
+			"configuration": "./<<m.lsConfiguration>>"
 		}],
 		"grammars": [{
-			"language": "<<m.lsLanguage>>",
+			"language": C_LANGUAGE,
 			"scopeName": "source.<<m.lsLanguage>>",
 			"path": "./syntaxes/<<m.tmLanguage>>"
 		}],
         "snippets": [
             {
-                "language": "vfp",
+                "language": C_LANGUAGE,
                 "path": "./snippets/<<m.lsSnippets>>"
             }
         ]
